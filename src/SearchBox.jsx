@@ -14,7 +14,7 @@ export default function SearchBox({updateInfo}){
         let data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${ID}&q=${city}&days=3&aqi=no&alerts=no`);
         let jsonresponse = await data.json();
     
-        //   console.log(jsonresponse);
+          console.log(jsonresponse);
         var time = new Date();
     
         let result = {
@@ -23,14 +23,23 @@ export default function SearchBox({updateInfo}){
                 feels_like: jsonresponse.forecast.forecastday[0].hour[time.getHours()].feelslike_c,
                 humid: jsonresponse.forecast.forecastday[0].hour[time.getHours()].humidity,
                 weather: jsonresponse.forecast.forecastday[0].hour[time.getHours()].condition.text,
-                city:jsonresponse.location.name
+                city:jsonresponse.location.name,
+                rajya:jsonresponse.location.region,
+                adhiktam_tapman: jsonresponse.forecast.forecastday[0].day.maxtemp_c,
+                nyuntam_tapman: jsonresponse.forecast.forecastday[0].day.mintemp_c,
+                last_dated:jsonresponse.forecast.forecastday[0].date
             },
             forcast_sec_day: {
                 real_temp: jsonresponse.forecast.forecastday[1].hour[time.getHours()].temp_c,
                 feels_like: jsonresponse.forecast.forecastday[1].hour[time.getHours()].feelslike_c,
                 humid: jsonresponse.forecast.forecastday[1].hour[time.getHours()].humidity,
                 weather: jsonresponse.forecast.forecastday[1].hour[time.getHours()].condition.text,
-                city:jsonresponse.location.name
+                city:jsonresponse.location.name, 
+                rajya:jsonresponse.location.region,
+                adhiktam_tapman: jsonresponse.forecast.forecastday[1].day.maxtemp_c,
+                nyuntam_tapman: jsonresponse.forecast.forecastday[1].day.mintemp_c,
+                last_dated:jsonresponse.forecast.forecastday[1].date,
+
 
             },
             forcast_third_day: {
@@ -38,7 +47,11 @@ export default function SearchBox({updateInfo}){
                 feels_like: jsonresponse.forecast.forecastday[2].hour[time.getHours()].feelslike_c,
                 humid: jsonresponse.forecast.forecastday[2].hour[time.getHours()].humidity,
                 weather: jsonresponse.forecast.forecastday[2].hour[time.getHours()].condition.text,
-                city:jsonresponse.location.name
+                city:jsonresponse.location.name, 
+                rajya:jsonresponse.location.region,
+                adhiktam_tapman: jsonresponse.forecast.forecastday[2].day.maxtemp_c,
+                nyuntam_tapman: jsonresponse.forecast.forecastday[2].day.mintemp_c,
+                last_dated:jsonresponse.forecast.forecastday[2].date
 
             }
         }
