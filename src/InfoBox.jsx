@@ -19,13 +19,11 @@ export default function InfoBox({ info }) {
         <div className='crddddd'>
             <div className="InfoBox_first_day">
 
-                
-
                 <h1> {info.forcast_one_day.last_dated} Weather Info -{info.forcast_one_day.weather}</h1>
                 <div className='cardcontainer'>
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
-                            sx={{ height: 140 }}
+                            sx={{ height: 300}}
                             image={info.forcast_one_day.humid > 50 ? RAIN_URL : (info.forcast_one_day.real_temp > 22 ? HOT_URL : COLD_URL)}
                             title="Weather Image"
                         />
@@ -50,9 +48,9 @@ export default function InfoBox({ info }) {
             <div className="InfoBox_sec_day">
                 <h1>{info.forcast_sec_day.last_dated} Weather Info -{info.forcast_sec_day.weather}</h1>
                 <div className='cardcontainer'>
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
-                            sx={{ height: 140 }}
+                            sx={{ height: 300 }}
                             image={info.forcast_sec_day.humid > 50 ? RAIN_URL : (info.forcast_sec_day.real_temp > 20 ? HOT_URL : COLD_URL)}
                             title="Weather Image"
                         />
@@ -77,9 +75,9 @@ export default function InfoBox({ info }) {
             <div className="InfoBox_third_day">
                 <h1>{info.forcast_third_day.last_dated} Weather Info -{info.forcast_third_day.weather}</h1>
                 <div className='cardcontainer'>
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
-                            sx={{ height: 140 }}
+                            sx={{ height: 300 }}
                             image={info.forcast_third_day.humid > 50 ? RAIN_URL : (info.forcast_third_day.real_temp > 22 ? HOT_URL : COLD_URL)}
                             title="Weather Image"
                         />
