@@ -27,7 +27,11 @@ export default function SearchBox({updateInfo}){
                 rajya:jsonresponse.location.region,
                 adhiktam_tapman: jsonresponse.forecast.forecastday[0].day.maxtemp_c,
                 nyuntam_tapman: jsonresponse.forecast.forecastday[0].day.mintemp_c,
-                last_dated:jsonresponse.forecast.forecastday[0].date
+                last_dated:jsonresponse.forecast.forecastday[0].date,
+                visiblity_km:jsonresponse.forecast.forecastday[0].day.avgvis_km,
+                wind_speed:jsonresponse.forecast.forecastday[0].day.maxwind_kph,
+                suryaudaye:jsonresponse.forecast.forecastday[0].astro.sunrise,
+                suryasth:jsonresponse.forecast.forecastday[0].astro.sunset,
             },
             forcast_sec_day: {
                 real_temp: jsonresponse.forecast.forecastday[1].hour[time.getHours()].temp_c,
@@ -39,6 +43,11 @@ export default function SearchBox({updateInfo}){
                 adhiktam_tapman: jsonresponse.forecast.forecastday[1].day.maxtemp_c,
                 nyuntam_tapman: jsonresponse.forecast.forecastday[1].day.mintemp_c,
                 last_dated:jsonresponse.forecast.forecastday[1].date,
+                visiblity_km:jsonresponse.forecast.forecastday[1].day.avgvis_km,
+                wind_speed:jsonresponse.forecast.forecastday[1].day.maxwind_kph,
+                suryaudaye:jsonresponse.forecast.forecastday[1].astro.sunrise,
+                suryasth:jsonresponse.forecast.forecastday[1].astro.sunset,
+
 
 
             },
@@ -51,7 +60,11 @@ export default function SearchBox({updateInfo}){
                 rajya:jsonresponse.location.region,
                 adhiktam_tapman: jsonresponse.forecast.forecastday[2].day.maxtemp_c,
                 nyuntam_tapman: jsonresponse.forecast.forecastday[2].day.mintemp_c,
-                last_dated:jsonresponse.forecast.forecastday[2].date
+                last_dated:jsonresponse.forecast.forecastday[2].date,
+                visiblity_km:jsonresponse.forecast.forecastday[2].day.avgvis_km,
+                wind_speed:jsonresponse.forecast.forecastday[2].day.maxwind_kph,
+                suryaudaye:jsonresponse.forecast.forecastday[2].astro.sunrise,
+                suryasth:jsonresponse.forecast.forecastday[2].astro.sunset,
 
             }
         }

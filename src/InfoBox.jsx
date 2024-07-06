@@ -24,7 +24,7 @@ export default function InfoBox({ info }) {
                     <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
                             sx={{ height: 300}}
-                            image={info.forcast_one_day.humid > 50 ? RAIN_URL : (info.forcast_one_day.real_temp > 22 ? HOT_URL : COLD_URL)}
+                            image={info.forcast_one_day.real_temp <15 ? COLD_URL : (info.forcast_one_day.real_temp >27 ? HOT_URL : RAIN_URL)}
                             title="Weather Image"
                         />
                         <CardContent>
@@ -39,6 +39,16 @@ export default function InfoBox({ info }) {
                                 <p>Feels Like: {info.forcast_one_day.feels_like}&deg;C</p>
                                  <p>Max Temperature: {info.forcast_one_day.adhiktam_tapman}&deg;C</p>
                                 <p>Min Temperature: {info.forcast_one_day.nyuntam_tapman}&deg;C</p>
+                                <p>Visiblity:{info.forcast_one_day.visiblity_km} km</p>
+                                <p>
+                                    <span>Wind Speed: {info.forcast_one_day.wind_speed} km/h</span>
+                                </p>
+                                <p>
+                                    sunrise:{info.forcast_one_day.suryaudaye}
+                                </p>
+                                <p>
+                                    sunset:{info.forcast_one_day.suryasth}
+                                </p>
                             </Typography>
                         </CardContent>
                     </Card>
@@ -51,7 +61,7 @@ export default function InfoBox({ info }) {
                     <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
                             sx={{ height: 300 }}
-                            image={info.forcast_sec_day.humid > 50 ? RAIN_URL : (info.forcast_sec_day.real_temp > 20 ? HOT_URL : COLD_URL)}
+                            image={info.forcast_sec_day.real_temp <15 ? COLD_URL : (info.forcast_sec_day.real_temp >27 ? HOT_URL : RAIN_URL)}
                             title="Weather Image"
                         />
                         <CardContent>
@@ -66,6 +76,16 @@ export default function InfoBox({ info }) {
                                 <p>Feels Like: {info.forcast_sec_day.feels_like}&deg;C</p>
                                 <p>Max Temperature: {info.forcast_sec_day.adhiktam_tapman}&deg;C</p>
                                 <p>Min Temperature: {info.forcast_sec_day.nyuntam_tapman}&deg;C</p>
+                                <p>Visiblity:{info.forcast_sec_day.visiblity_km} km</p>
+                                <p>
+                                    <span>Wind Speed: {info.forcast_sec_day.wind_speed} km/h</span>
+                                </p>
+                                <p>
+                                    sunrise:{info.forcast_sec_day.suryaudaye}
+                                </p>
+                                <p>
+                                    sunset:{info.forcast_sec_day.suryasth}
+                                </p>
                             </Typography>
                         </CardContent>
                     </Card>
@@ -78,7 +98,7 @@ export default function InfoBox({ info }) {
                     <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
                             sx={{ height: 300 }}
-                            image={info.forcast_third_day.humid > 50 ? RAIN_URL : (info.forcast_third_day.real_temp > 22 ? HOT_URL : COLD_URL)}
+                            image={info.forcast_third_day.real_temp <15 ? COLD_URL : (info.forcast_third_day.real_temp >27 ? HOT_URL : RAIN_URL)}
                             title="Weather Image"
                         />
                         <CardContent>
@@ -93,6 +113,16 @@ export default function InfoBox({ info }) {
                                 <p>Feels Like: {info.forcast_third_day.feels_like}&deg;C</p>
                                 <p>Max Temperature: {info.forcast_third_day.adhiktam_tapman}&deg;C</p>
                                 <p>Min Temperature: {info.forcast_third_day.nyuntam_tapman}&deg;C</p>
+                                <p>Visiblity:{info.forcast_third_day.visiblity_km} km</p>
+                                <p>
+                                    <span>Wind Speed: {info.forcast_third_day.wind_speed} km/h</span>
+                                </p>
+                                <p>
+                                    sunrise:{info.forcast_third_day.suryaudaye}
+                                </p>
+                                <p>
+                                    sunset:{info.forcast_third_day.suryasth}
+                                </p>
                             </Typography>
                         </CardContent>
                     </Card>
