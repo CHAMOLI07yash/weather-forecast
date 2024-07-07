@@ -16,6 +16,7 @@ export default function SearchBox({updateInfo}){
     
           console.log(jsonresponse);
         var time = new Date();
+        console.log(time);
     
         let result = {
             forcast_one_day: {

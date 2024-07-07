@@ -19,18 +19,19 @@ export default function InfoBox({ info }) {
         <div className='crddddd'>
             <div className="InfoBox_first_day">
 
-                <h1> {info.forcast_one_day.last_dated} Weather Info -{info.forcast_one_day.weather}</h1>
+                <h1> {info.forcast_one_day.last_dated}</h1>
                 <div className='cardcontainer'>
                     <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
                             sx={{ height: 300}}
-                            image={info.forcast_one_day.real_temp <15 ? COLD_URL : (info.forcast_one_day.real_temp >27 ? HOT_URL : RAIN_URL)}
+                            image={info.forcast_one_day.humid >=67 ? RAIN_URL : (info.forcast_one_day.real_temp >15 ? HOT_URL : COLD_URL)}
                             title="Weather Image"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {info.forcast_one_day.city} , {info.forcast_one_day.rajya}
-                                {info.forcast_one_day.humid > 50 ? <BeachAccessIcon /> : (info.forcast_one_day.real_temp > 22 ? <WbSunnyIcon /> : <SevereColdIcon />)}
+                                {info.forcast_one_day.humid >= 67 ? <BeachAccessIcon /> : (info.forcast_one_day.real_temp >15 ? <WbSunnyIcon />:<SevereColdIcon />  )}
+                              
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component={"span"}>
                                 <p>Temperature: {info.forcast_one_day.real_temp}&deg;C</p>
@@ -56,18 +57,18 @@ export default function InfoBox({ info }) {
             </div>
     
             <div className="InfoBox_sec_day">
-                <h1>{info.forcast_sec_day.last_dated} Weather Info -{info.forcast_sec_day.weather}</h1>
+                <h1>{info.forcast_sec_day.last_dated}</h1>
                 <div className='cardcontainer'>
                     <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
                             sx={{ height: 300 }}
-                            image={info.forcast_sec_day.real_temp <15 ? COLD_URL : (info.forcast_sec_day.real_temp >27 ? HOT_URL : RAIN_URL)}
+                            image={info.forcast_sec_day.humid >=67 ? RAIN_URL : (info.forcast_sec_day.real_temp >15 ? HOT_URL : COLD_URL)}
                             title="Weather Image"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {info.forcast_sec_day.city} , {info.forcast_one_day.rajya}
-                                {info.forcast_sec_day.humid > 50 ? <BeachAccessIcon /> : (info.forcast_sec_day.real_temp > 22 ? <WbSunnyIcon /> : <SevereColdIcon />)}
+                                {info.forcast_sec_day.humid >= 67 ? <BeachAccessIcon /> : (info.forcast_sec_day.real_temp >15 ?  <WbSunnyIcon /> :<SevereColdIcon />  )}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component={"span"}>
                                 <p>Temperature: {info.forcast_sec_day.real_temp}&deg;C</p>
@@ -93,18 +94,18 @@ export default function InfoBox({ info }) {
             </div>
     
             <div className="InfoBox_third_day">
-                <h1>{info.forcast_third_day.last_dated} Weather Info -{info.forcast_third_day.weather}</h1>
+                <h1>{info.forcast_third_day.last_dated} </h1>
                 <div className='cardcontainer'>
                     <Card sx={{ maxWidth: 405 }}>
                         <CardMedia
                             sx={{ height: 300 }}
-                            image={info.forcast_third_day.real_temp <15 ? COLD_URL : (info.forcast_third_day.real_temp >27 ? HOT_URL : RAIN_URL)}
+                            image={info.forcast_third_day.humid >=67 ? RAIN_URL : (info.forcast_third_day.real_temp >15 ? HOT_URL : COLD_URL)}
                             title="Weather Image"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
-                                {info.forcast_third_day.city} , {info.forcast_one_day.rajya}
-                                {info.forcast_third_day.humid > 50 ? <BeachAccessIcon /> : (info.forcast_third_day.real_temp > 22 ? <WbSunnyIcon /> : <SevereColdIcon />)}
+                                {info.forcast_third_day.city} , {info.forcast_third_day.rajya}
+                                {info.forcast_third_day.humid >= 67 ? <BeachAccessIcon /> : (info.forcast_sec_day.real_temp >15 ?  <WbSunnyIcon /> :<SevereColdIcon />  )}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component={"span"}>
                                 <p>Temperature: {info.forcast_third_day.real_temp}&deg;C</p>
